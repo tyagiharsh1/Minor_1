@@ -1,0 +1,17 @@
+.Navbar
+{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    padding:8px 12px;
+    background-color: #797474;
+    .right-side
+    {
+        .user-section
+        {
+            margin-right: 20px;
+        }
+    }
+}
