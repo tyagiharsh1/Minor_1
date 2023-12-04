@@ -1,13 +1,21 @@
 .Login {
+  background-image: url("../../assets/loginBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  .login-overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+    backdrop-filter: blur(4px);
     .login-box {
       padding: 30px 40px;
       border: 2px solid black;
       border-radius: 10px;
-      min-width: 375px;
+      max-width: 375px;
       .login-heading {
         font-size: 1.7rem;
         margin-bottom: 3px;
@@ -24,19 +32,18 @@
         font-size: 1.1rem;
         font-weight: 600;
       }
-      .login-input
-      {
+      .login-input {
         display: block;
         width: 100%;
         padding: 8px 12px;
         border-radius: 5px;
         outline: none;
-        border: 1.5px solid black;
+        border: 1.4px solid black;
         background-color: #c5c4c442;
         font-size: 0.95rem;
       }
       .login-submit {
-        width: 50%;
+        width: 90%;
         border: none;
         color: black;
         background-color: #29b4ff;
@@ -58,7 +65,7 @@
           color: #29b4ff;
           font-weight: 400;
         }
+      }
     }
+  }
 }
-}
-    

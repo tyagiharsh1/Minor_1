@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route element={<RequireUser />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
         </Route>
         <Route element={<OnlyIfNotLoggedIn />}>
           <Route path="/login" element={<Login />} />

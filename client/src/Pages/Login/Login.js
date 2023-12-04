@@ -34,58 +34,61 @@ function Login() {
   }
   return (
     <div className="Login">
-      <div className="login-box">
-        <h2 className="login-heading">Login</h2>
-        <Form onSubmitCapture={handleSubmit} className="form">
-          <Form.Item
-            name="email"
-            label="E-mail"
-            rules={[
-              {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!",
-              },
-            ]}
-          >
-            <Input
-              type="email"
-              id="email"
-              
-              onChange={(event) => setUserEmail(event.target.value)}
-            />
-          </Form.Item>
-          <Form.Item
-            name="password"
-            label="Password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-            hasFeedback
-          >
-            <Input.Password
-              type="password"
-              id="password"
-              onChange={(event) => setUserPassword(event.target.value)}
-            />
-          </Form.Item>
+      <div className="login-overlay">
+        <div className="login-box">
+          <h2 className="login-heading">Login</h2>
+          <Form onSubmitCapture={handleSubmit} className="form">
+            <Form.Item
+              name="email"
+              label="E-mail"
+              rules={[
+                {
+                  type: "email",
+                  message: "The input is not valid E-mail!",
+                },
+                {
+                  required: true,
+                  message: "Please input your E-mail!",
+                },
+              ]}
+            >
+              <Input
+                type="email"
+                id="email"
+                style={{ width: "115%", padding: "8px 10px" }}
+                onChange={(event) => setUserEmail(event.target.value)}
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              label="Password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+              ]}
+              hasFeedback
+            >
+              <Input.Password
+                type="password"
+                id="password"
+                style={{padding: "8px 10px" }}
+                onChange={(event) => setUserPassword(event.target.value)}
+              />
+            </Form.Item>
 
-          <input type="submit" className="login-submit login-input" />
-        </Form>
-        <p className="signup-Navigate">
-          Create an Account?
-          <span>
-            <Link className="link" to="/signup">
-              Signup
-            </Link>
-          </span>
-        </p>
+            <input type="submit" className="login-submit login-input" />
+          </Form>
+          <p className="signup-Navigate">
+            Create an Account?
+            <span>
+              <Link className="link" to="/signup">
+                Signup
+              </Link>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

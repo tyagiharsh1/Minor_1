@@ -1,12 +1,15 @@
 import { UserOutlined } from "@ant-design/icons";
 import React from "react";
-import { Avatar, Space } from "antd";
+import { Avatar} from "antd";
+import Logo from '../../assets/logo.jpg'
 import "./Navbar.scss";
 function Navbar() {
   return (
     <div className="Navbar">
       <div className="left-side">
-          <h2>Logo</h2>
+        <div className="logo-img">
+          <img src={Logo} alt="" />
+        </div>
       </div>
       <div className="right-side">
         <div className="user-section">
