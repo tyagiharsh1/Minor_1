@@ -1,17 +1,32 @@
 .Navbar
 {
-    height: 70px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     padding:8px 12px;
-    background-color: #797474;
+    background-color: #9EB8D9;
+    .left-side
+    {
+        .logo-img
+        {
+            height: 60px;
+            width: 60px;
+            cursor: pointer;
+            img{
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
     .right-side
     {
         .user-section
         {
             margin-right: 20px;
+            cursor: pointer;
         }
     }
 }

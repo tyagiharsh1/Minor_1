@@ -18,7 +18,7 @@ const signupController = async (req, res) => {
   if (user) return res.send(error(400, "user already registered"));
   const hashPass = await bcrypt.hash(password, 10);
   try {
-    const newUser = await User.create({
+    await User.create({
       name,
       password: hashPass,
       email,
@@ -27,7 +27,7 @@ const signupController = async (req, res) => {
       age,
       blood_group,
     });
-    return res.send(success(200, { newUser }));
+    return res.send(success(200, "Account created successfully"));
   } catch (err) {
     console.log(err);
     return res.send(error(500, err.message));

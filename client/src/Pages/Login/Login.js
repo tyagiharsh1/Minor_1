@@ -1,3 +1,5 @@
+import { Button, Checkbox, Form, Input } from "antd";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { axiosClient } from "../../utils/axiosClient";
@@ -11,7 +13,10 @@ function Login() {
   //function to handle Data on submit
   async function handleSubmit(event) {
     event.preventDefault(); //prevent the default behaviour of form
+    console.log("I'm here");
     try {
+      console.log(userEmail);
+      console.log(userPassword);
       const result = await axiosClient.post(
         "/auth/login",
         //send the data in the body of API
@@ -29,33 +34,61 @@ function Login() {
   }
   return (
     <div className="Login">
-      <div className="login-box">
-        <h2 className="login-heading">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            className="login-input"
-            onChange={(event) => setUserEmail(event.target.value)}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            className="login-input"
-            onChange={(event) => setUserPassword(event.target.value)}
-          />
-          <input type="submit" className="login-submit" />
-        </form>
-        <p className="signup-Navigate">
-          Create an Account?
-          <span>
-            <Link className="link" to="/signup">
-              Signup
-            </Link>
-          </span>
-        </p>
+      <div className="login-overlay">
+        <div className="login-box">
+          <h2 className="login-heading">Login</h2>
+          <Form onSubmitCapture={handleSubmit} className="form">
+            <Form.Item
+              name="email"
+              label="E-mail"
+              rules={[
+                {
+                  type: "email",
+                  message: "The input is not valid E-mail!",
+                },
+                {
+                  required: true,
+                  message: "Please input your E-mail!",
+                },
+              ]}
+            >
+              <Input
+                type="email"
+                id="email"
+                style={{ width: "115%", padding: "8px 10px" }}
+                onChange={(event) => setUserEmail(event.target.value)}
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              label="Password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+              ]}
+              hasFeedback
+            >
+              <Input.Password
+                type="password"
+                id="password"
+                style={{padding: "8px 10px" }}
+                onChange={(event) => setUserPassword(event.target.value)}
+              />
+            </Form.Item>
+
+            <input type="submit" className="login-submit login-input" />
+          </Form>
+          <p className="signup-Navigate">
+            Create an Account?
+            <span>
+              <Link className="link" to="/signup">
+                Signup
+              </Link>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -51,6 +51,7 @@ function Signup() {
           <input
             type="email"
             id="email"
+            
             className="signup-input"
             onChange={(event) => setUserEmail(event.target.value)}
           />
