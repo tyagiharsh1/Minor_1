@@ -376,6 +376,7 @@ function Signup() {
 
   const handleSubmit = async (values) => {
     try {
+
       await axiosClient.post("/auth/signup", {
         email: values.email,
         name: values.name,
@@ -387,6 +388,22 @@ function Signup() {
       });
       message.success("Signup successful!");
       navigate("/");
+
+      await axiosClient.post(
+        "/auth/signup",
+        //send the data in the body of API
+        {
+          email: userEmail,
+          name: userName,
+          password: userPassword,
+          age:userage,
+          blood_group:userBloodgroup,
+          city:userCity,
+          phone_no:userphone_no,
+        }
+      );
+      navigate("/search");
+
     } catch (error) {
       message.error("Signup failed. Please try again.");
       console.error(error);
