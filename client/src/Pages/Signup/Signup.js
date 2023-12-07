@@ -29,7 +29,7 @@ function Signup() {
           phone_no:userphone_no,
         }
       );
-      navigate("/");
+      navigate("/search");
     } catch (error) {
       console.log(error);
     }
