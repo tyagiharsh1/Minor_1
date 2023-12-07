@@ -9,16 +9,16 @@ export const TOAST_SUCCESS = "toast_success";
 export const TOAST_FAILURE = "toast_failure";
 function App() {
   //for toast
-  useEffect(() => {
-    switch (toastData.type) {
-      case TOAST_SUCCESS:
-        toast.success(toastData.message);
-        break;
-      case TOAST_FAILURE:
-        toast.error(toastData.message);
-        break;
-    }
-  }, [toastData]);
+  // useEffect(() => {
+  //   switch (toastData.type) {
+  //     case TOAST_SUCCESS:
+  //       toast.success(toastData.message);
+  //       break;
+  //     case TOAST_FAILURE:
+  //       toast.error(toastData.message);
+  //       break;
+  //   }
+  // }, [toastData]);
   return (
     <>
       <div>
